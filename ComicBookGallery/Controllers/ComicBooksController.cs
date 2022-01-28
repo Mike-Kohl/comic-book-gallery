@@ -15,7 +15,7 @@ namespace ComicBookGallery.Controllers
                 return Redirect("/");
             }
 
-            return Content("hello world");
+            return View();
         }
     }
 }
