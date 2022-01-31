@@ -1,16 +1,17 @@
 ﻿@{
-        Layout = null;
+    Layout = null;
 
-        var seriesTitle = "The Amazing Spider-Man";
-        var issueNumber = 700;
-        var description = "<p>Final issue!</p?";
-        var artists = new string[]
-        {
+    var seriesTitle = "The Amazing Spider-Man";
+    var issueNumber = 700;
+    var description = "<p>Final issue! Witness the final hours of Doctor Octopus' life and his one, last, great act of revenge! Even if Spider-Man" +
+            " survives.. <strong>will Peter Parker?</strong></p?";
+    var artists = new string[]
+    {
             "script: Mike KohL",
             "penciles: Humberto Ramos",
             "Inks: Mike Johnson"
-        
-    };
+
+};
 }
 
 <!DOCTYPE html>
@@ -28,8 +29,18 @@
         <h5>Description:</h5>
         <div>@Html.Raw(description)</div>
 
-        <h5>Artists:</h5>
-        <div>@artists</div>
+        @if (artists.Length > 0)
+        {
+            <h5>Artists:</h5>
+            <div>
+                <ul>
+                    @foreach (var artist in artists)
+                    {
+                        <li>@artist</li>
+                    }
+                </ul>
+            </div>
+        }
     </div>
 </body>
 </html>
