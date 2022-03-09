@@ -10,7 +10,7 @@ namespace ComicBookGallery.Data
             return Data.Series;
         }
 
-        public Series SeriesDatail(int id) 
+        public Series GetSeriesDetail(int id) 
         {
             Series seriesToReturn = null;
 
@@ -35,6 +35,8 @@ namespace ComicBookGallery.Data
                         comicBooks[comicBooks.Length - 1] = comicBook;
                     }
                 }
+
+                seriesToReturn.Issues = comicBooks;
             }
 
 
